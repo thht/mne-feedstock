@@ -1,6 +1,6 @@
 {% set name = "mne" %}
-{% set version = "0.13.1" %}
-{% set sha256 = "c9433bbd9dee9bbcddc1b176e127a6e31edc3851f973cb440b35751f6aed42d2" %}
+{% set version = "0.14" %}
+{% set sha256 = "a64a5a9589f41ac6e12d7ed5c994c68917842a9df82d968a99c2df5bb7c7b248" %}
 
 package:
   name: {{ name|lower }}
@@ -13,14 +13,13 @@ source:
 
 build:
   number: 0
-  skip: true  # [py3k]
+  skip: true  # [osx and py3k or py36]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - numpy
   run:
     - python
     - matplotlib
@@ -41,7 +40,7 @@ about:
   home: http://martinos.org/mne
   license: BSD-3-Clause
   license_family: BSD
-#  license_file: LICENSE.txt
+  license_file: LICENSE.txt
   summary: 'MNE python project for MEG and EEG data analysis.'
   description: |
     MNE python project for MEG and EEG data analysis.
