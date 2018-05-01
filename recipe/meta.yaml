@@ -1,6 +1,6 @@
 {% set name = "mne" %}
-{% set version = "0.15.2" %}
-{% set sha256 = "b5aea8dc13b6a187d8f05640aef8bf8fb4dd38a4b78b19c382f02c4fef6f2bae" %}
+{% set version = "0.16.1" %}
+{% set sha256 = "1e3d64c21e9bc262ed383784ce0dbadf3ea00fe1062664da72702bd91972e2d8" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: python setup.py install --single-version-externally-managed --record record.txt
 
