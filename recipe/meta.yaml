@@ -14,25 +14,28 @@ source:
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
     - pip
   run:
-    - python
+    - python>=3.6
     - matplotlib
     - nibabel
     - numpy
     - scikit-learn
     - scipy
+    - pyqt
+    - vtk>=8
+    - pyqt>=4
+    - pyface>=6
     - mayavi
-    - pysurfer
 
 test:
   imports:
     - mne
+    - vtk
 #  commands:  # seems to be broken on Conda-Forge
 #    - mne
 
@@ -49,5 +52,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - larsoner
-    - christianbrodbeck
+    - thht
